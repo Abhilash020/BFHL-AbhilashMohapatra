@@ -1,8 +1,15 @@
 const express = require("express");
+const cors = require("cors");
+
 const app = express();
 
-app.use(express.json());
 
+
+app.use(cors({
+  origin: ['https://front-master-rosy.vercel.app',"http://localhost:3001"] 
+}));
+
+app.use(express.json());
 app
   .route("/bfhl")
   .get((req, res) => {
